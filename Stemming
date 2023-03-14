@@ -1,0 +1,39 @@
+What is Stemming?
+Stemming is a technique used to extract the base form of the words by removing affixes from them. It is just like cutting down the branches of a tree to its stems. For example, the stem of the words eating, eats, eaten is eat.
+
+Search engines use stemming for indexing the words. That’s why rather than storing all forms of a word, a search engine can store only the stems. In this way, stemming reduces the size of the index and increases retrieval accuracy.
+
+Various Stemming algorithms
+In NLTK, stemmerI, which have stem() method, interface has all the stemmers which we are going to cover next. Let us understand it with the following diagram
+
+Stemming Algorithms
+Porter stemming algorithm
+It is one of the most common stemming algorithms which is basically designed to remove and replace well-known suffixes of English words.
+
+PorterStemmer class
+NLTK has PorterStemmer class with the help of which we can easily implement Porter Stemmer algorithms for the word we want to stem. This class knows several regular word forms and suffixes with the help of which it can transform the input word to a final stem. The resulting stem is often a shorter word having the same root meaning. Let us see an example −
+
+First, we need to import the natural language toolkit(nltk).
+
+import nltk
+Now, import the PorterStemmer class to implement the Porter Stemmer algorithm.
+
+from nltk.stem import PorterStemmer
+Next, create an instance of Porter Stemmer class as follows −
+
+word_stemmer = PorterStemmer()
+Now, input the word you want to stem.
+
+word_stemmer.stem('writing')
+Output
+'write'
+word_stemmer.stem('eating')
+Output
+'eat'
+Complete implementation example
+import nltk
+from nltk.stem import PorterStemmer
+word_stemmer = PorterStemmer()
+word_stemmer.stem('writing')
+Output
+'write'
